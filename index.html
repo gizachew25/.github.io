@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gizachew Teshome - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -28,7 +27,6 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: #f9f9f9;
-            scroll-behavior: smooth;
         }
         
         .container {
@@ -85,12 +83,6 @@
             color: var(--secondary-color);
         }
         
-        .menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
         /* Hero Section */
         .hero {
             padding: 8rem 0 5rem;
@@ -124,22 +116,11 @@
             border-radius: 5px;
             font-weight: 600;
             transition: var(--transition);
-            margin: 0.5rem;
         }
         
         .btn:hover {
             background-color: #2980b9;
             transform: translateY(-3px);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-        }
-        
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary-color);
         }
         
         /* Sections */
@@ -413,37 +394,8 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .menu-btn {
-                display: block;
-            }
-            
             .nav-links {
-                position: fixed;
-                height: 100vh;
-                width: 100%;
-                top: 0;
-                left: -100%;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: var(--transition);
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
-            
-            .close-btn {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 1.5rem;
-                cursor: pointer;
+                display: none;
             }
             
             .hero h1 {
@@ -472,13 +424,7 @@
         <div class="container">
             <nav>
                 <div class="logo">Gizachew<span>Teshome</span></div>
-                <div class="menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
                 <ul class="nav-links">
-                    <div class="close-btn">
-                        <i class="fas fa-times"></i>
-                    </div>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
@@ -496,10 +442,7 @@
             <div class="hero-content">
                 <h1>Gizachew Teshome Habtamu</h1>
                 <p>Computer Science Lecturer | Information Security Specialist | Machine Learning Researcher</p>
-                <div>
-                    <a href="#contact" class="btn">Get In Touch</a>
-                    <a href="#projects" class="btn btn-outline">View My Work</a>
-                </div>
+                <a href="#contact" class="btn">Get In Touch</a>
             </div>
         </div>
     </section>
@@ -517,9 +460,9 @@
                     <p>With a Master's degree in Information Security from ITMO University in Russia, I bring international experience and a global perspective to my work. I'm passionate about advancing technology education and research in Ethiopia while contributing to the global tech community.</p>
                     
                     <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Dire Dawa University, Department of Computer Science Building, 1362, Dire Dawa, Ethiopia</p>
-                        <p><i class="fas fa-phone"></i> (+251) 970801754</p>
-                        <p><i class="fas fa-envelope"></i> gizachewteshome2007@gmail.com</p>
+                        <p><i>📍</i> Dire Dawa University, Department of Computer Science Building, 1362, Dire Dawa, Ethiopia</p>
+                        <p><i>📞</i> (+251) 970801754</p>
+                        <p><i>📧</i> gizachewteshome2007@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -757,40 +700,18 @@
                 <h2>Get In Touch</h2>
                 <p>Feel free to reach out for collaborations, research opportunities, or any inquiries.</p>
                 <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> Email: gizachewteshome2007@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> Phone: (+251) 970801754</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Address: Dire Dawa University, Department of Computer Science, Dire Dawa, Ethiopia</p>
+                    <p>Email: gizachewteshome2007@gmail.com</p>
+                    <p>Phone: (+251) 970801754</p>
+                    <p>Address: Dire Dawa University, Department of Computer Science, Dire Dawa, Ethiopia</p>
                 </div>
                 <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i>LinkedIn</i></a>
+                    <a href="#" aria-label="GitHub"><i>GitHub</i></a>
+                    <a href="#" aria-label="Google Scholar"><i>Scholar</i></a>
                 </div>
                 <p>&copy; 2023 Gizachew Teshome. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile menu functionality
-        const menuBtn = document.querySelector('.menu-btn');
-        const closeBtn = document.querySelector('.close-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.add('active');
-        });
-        
-        closeBtn.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
